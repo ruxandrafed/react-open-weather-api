@@ -37,6 +37,20 @@ var styles = {
   },
   homeBtn: {
     marginTop: '10px'
+  },
+  headerBtn: {
+    marginLeft: '10px'
+  },
+  header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    background: 'rgba(252, 90, 44, 0.89)',
+    color: '#fff',
+    padding: '10px'
+  },
+  headerTitle: {
+    margin: 0
   }
 };
 

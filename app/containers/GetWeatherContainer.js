@@ -21,7 +21,7 @@ var GetWeatherContainer = React.createClass({
                placeholder="St. George, Utah"
                type="text"
                value={this.state.city} />
-        <button style={styles.homeBtn} type="button" onClick={this.handleSubmitCity} className="btn btn-success">
+        <button style={this.props.direction === 'column' ? styles.homeBtn: styles.headerBtn} type="button" onClick={this.handleSubmitCity} className="btn btn-success">
           Get Weather
         </button>
       </div>
