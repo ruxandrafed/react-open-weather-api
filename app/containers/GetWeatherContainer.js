@@ -7,11 +7,14 @@ var GetWeatherContainer = React.createClass({
       city: ''
     }
   },
-  handleUpdateCity: function() {
-    console.log('change city');
+  handleUpdateCity: function(e) {
+    this.setState({
+      city: e.target.value
+    });
   },
   handleSubmitCity: function() {
     console.log('submit city');
+    console.log(this.state.city);
   },
   render: function () {
     return (
