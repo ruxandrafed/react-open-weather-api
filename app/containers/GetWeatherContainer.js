@@ -2,7 +2,6 @@ var React = require('react');
 var styles = require('../styles/index');
 var PropTypes = React.PropTypes;
 var GetWeather = require('../components/GetWeather');
-var weatherApiHelpers = require('../utils/weatherApiHelpers');
 
 var GetWeatherContainer = React.createClass({
   // pass content (otherwise we'd have to pass router as a props)
