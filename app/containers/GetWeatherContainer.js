@@ -1,5 +1,6 @@
 var React = require('react');
 var styles = require('../styles/index');
+var weatherApiHelpers = require('../utils/weatherApiHelpers');
 
 var GetWeatherContainer = React.createClass({
   getInitialState: function() {
@@ -14,8 +15,10 @@ var GetWeatherContainer = React.createClass({
   },
   handleSubmitCity: function() {
     console.log('submit city');
-    console.log(this.state.city);
-    console.log(process.env.API_KEY);
+    weatherApiHelpers.getWeatherForCity(this.state.city)
+      .then(function(response) {
+        console.log(response.data);
+      }.bind(this));
   },
   render: function () {
     return (
