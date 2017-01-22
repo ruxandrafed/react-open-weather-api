@@ -5,6 +5,10 @@ var GetWeather = require('../components/GetWeather');
 var weatherApiHelpers = require('../utils/weatherApiHelpers');
 
 var GetWeatherContainer = React.createClass({
+  // pass content (otherwise we'd have to pass router as a props)
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   getDefaultProps: function () {
     return {
       direction: 'column'
@@ -23,9 +27,10 @@ var GetWeatherContainer = React.createClass({
       city: e.target.value
     });
   },
-  handleSubmitCity: function() {
-    console.log('submit city');
-    weatherApiHelpers.getWeatherForCity(this.state.city);
+  handleSubmitCity: function(e) {
+    e.preventDefault();
+    console.log(this.state.city);
+    this.context.router.push('/forecast/' + this.state.city);
   },
   render: function () {
     return (
