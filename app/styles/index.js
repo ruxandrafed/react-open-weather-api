@@ -58,7 +58,10 @@ var styles = {
   },
   forecastContainer: {
 
-  }
+  },
+  dayForecastContainer: {
+
+  },
 };
 
 module.exports = styles;
