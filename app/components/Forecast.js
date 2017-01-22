@@ -1,10 +1,7 @@
 var React = require('react');
 var styles = require('../styles/index');
 var PropTypes = React.PropTypes;
-
-function puke(object) {
-  return <pre>{JSON.stringify(object, null, ' ')}</pre>
-}
+var puke = require('../utils/otherHelpers').puke;
 
 function Forecast (props) {
   return (props.isLoading === true)
