@@ -47,6 +47,6 @@ GetWeather.propTypes = {
   onSubmitCity: PropTypes.func.isRequired,
   onUpdateCity: PropTypes.func.isRequired,
   city: PropTypes.string.isRequired
-}
+};
 
 module.exports = GetWeather;
