@@ -10,7 +10,9 @@ function Forecast (props) {
 }
 
 Forecast.propTypes = {
-//  city: PropTypes.string.isRequired
-};
+  city: PropTypes.string.isRequired,
+  forecastData: PropTypes.object.isRequired,
+  isLoading: PropTypes.bool.isRequired
+}
 
 module.exports = Forecast;

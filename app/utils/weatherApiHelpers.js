@@ -14,14 +14,14 @@ var helpers = {
     let url = getApiUrlForCurrentWeather(cityName);
     return axios.get(url)
       .then(function(response) {
-        console.log(response.data);
+        return response.data;
       });
   },
   get5DayForecastForCity: function(cityName) {
     let url = getApiUrlFor5DayForecast(cityName);
     return axios.get(url)
       .then(function(response) {
-        console.log(response.data);
+        return response.data;
       });
   }
 };
