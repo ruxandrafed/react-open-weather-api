@@ -15,6 +15,7 @@ var GetWeatherContainer = React.createClass({
   handleSubmitCity: function() {
     console.log('submit city');
     console.log(this.state.city);
+    console.log(process.env.API_KEY);
   },
   render: function () {
     return (
