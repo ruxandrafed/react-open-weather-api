@@ -27,7 +27,7 @@ var ForecastContainer = React.createClass({
   render: function () {
     return (
       <Forecast
-        city={this.props.location.query}
+        city={this.props.routeParams.city}
         isLoading={this.state.isLoading}
         forecastData={this.state.forecastData}
       />

@@ -48,6 +48,16 @@ var styles = {
   },
   headerTitle: {
     margin: 0
+  },
+  forecastHeader: {
+    color: '#000',
+    marginBottom: '10px',
+    fontSize: '45px',
+    fontWeight: '100',
+    textAlign: 'center'
+  },
+  forecastContainer: {
+
   }
 };
 
