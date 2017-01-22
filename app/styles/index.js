@@ -35,11 +35,8 @@ var styles = {
     maxWidth: '300px',
     alignSelf: 'right'
   },
-  homeBtn: {
-    marginTop: '10px'
-  },
-  headerBtn: {
-    marginLeft: '10px'
+  formButton: {
+    margin: '10px'
   },
   header: {
     display: 'flex',

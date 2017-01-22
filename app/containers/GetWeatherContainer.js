@@ -1,5 +1,6 @@
 var React = require('react');
 var styles = require('../styles/index');
+var GetWeather = require('../components/GetWeather');
 var weatherApiHelpers = require('../utils/weatherApiHelpers');
 
 var GetWeatherContainer = React.createClass({
@@ -22,16 +23,11 @@ var GetWeatherContainer = React.createClass({
   },
   render: function () {
     return (
-      <div style={this.props.direction === 'column' ? styles.homeForm: styles.headerForm}>
-        <input className="form-control"
-               onChange={this.handleUpdateCity}
-               placeholder="St. George, Utah"
-               type="text"
-               value={this.state.city} />
-        <button style={this.props.direction === 'column' ? styles.homeBtn: styles.headerBtn} type="button" onClick={this.handleSubmitCity} className="btn btn-success">
-          Get Weather
-        </button>
-      </div>
+      <GetWeather
+        direction={this.props.direction}
+        onSubmitCity={this.handleSubmitCity}
+        onUpdateCity={this.handleUpdateCity}
+        city={this.state.city} />
     )
   }
 });
