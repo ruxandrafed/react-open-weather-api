@@ -15,7 +15,7 @@ var GetWeatherContainer = React.createClass({
   },
   handleSubmitCity: function() {
     console.log('submit city');
-    weatherApiHelpers.getWeatherForCity(this.state.city)
+    weatherApiHelpers.get5DayForecastForCity(this.state.city)
       .then(function(response) {
         console.log(response.data);
       }.bind(this));
