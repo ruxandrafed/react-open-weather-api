@@ -3,19 +3,8 @@ var styles = require('../styles/index');
 var PropTypes = React.PropTypes;
 var puke = require('../utils/otherHelpers').puke;
 var getDate = require('../utils/otherHelpers').getDateString;
-
-function DayForecast (props) {
-  var date = getDate(props.day.dt);
-  var icon = props.day.weather[0].icon;
-  return (
-    <div>
-      <div style={styles.dayForecastContainer} onClick={props.handleClick}>
-        <img style={styles.weatherImg} src={'http://openweathermap.org/img/w/' + icon + '.png'} alt='Weather' />
-        <h2 style={styles.dayForecastHeader}>{date}</h2>
-      </div>
-    </div>
-  )
-}
+var DayForecast = require('./DayForecast');
+var Link = require('react-router').Link;
 
 function ForecastUI (props) {
   return (
@@ -26,6 +15,11 @@ function ForecastUI (props) {
         {props.forecastData.list.map(function (listItem) {
           return <DayForecast key={listItem.dt} day={listItem} handleClick={props.handleClick.bind(null, listItem)}/>
         })}
+      </div>
+      <div style={styles.startOverBtnContainer}>
+        <Link to="/">
+          <button type="button" className="btn btn-lg btn-success">Start over</button>
+        </Link>
       </div>
     </div>
   )

@@ -8,6 +8,7 @@ var DayDetailContainer = React.createClass({
         weather={this.props.location.state.weather}
         city={this.props.routeParams.city}
       />
+
     )
   }
 });

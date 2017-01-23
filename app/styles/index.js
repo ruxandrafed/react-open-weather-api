@@ -75,7 +75,6 @@ var styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    maxWidth: '60%',
     cursor: 'pointer'
   },
   weatherImg: {
@@ -87,6 +86,19 @@ var styles = {
     marginBottom: '10px',
     fontSize: '20px',
     fontWeight: '100',
+    textAlign: 'center'
+  },
+  detailForecastContainer: {
+    textAlign: 'center'
+  },
+  dayDetailContainer: {
+    textAlign: 'center',
+    color: '#bbb',
+    marginBottom: '10px',
+    fontSize: '20px',
+    fontWeight: '100',
+  },
+  startOverBtnContainer: {
     textAlign: 'center'
   }
 };
