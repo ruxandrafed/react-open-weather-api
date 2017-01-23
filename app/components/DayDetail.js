@@ -7,6 +7,7 @@ function DayDetail (props) {
   return (
     <div>
       Day Detail
+      {puke(props)}
     </div>
   )
 }
