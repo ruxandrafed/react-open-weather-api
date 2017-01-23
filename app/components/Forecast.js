@@ -9,7 +9,7 @@ function DayForecast (props) {
   var icon = props.day.weather[0].icon;
   return (
     <div>
-      <div style={styles.dayForecastContainer}>
+      <div style={styles.dayForecastContainer} onClick={props.handleClick}>
         <img style={styles.weatherImg} src={'http://openweathermap.org/img/w/' + icon + '.png'} alt='Weather' />
         <h2 style={styles.dayForecastHeader}>{date}</h2>
       </div>
@@ -24,7 +24,7 @@ function ForecastUI (props) {
       <h2 style={styles.forecastSubheader}>Select a day</h2>
       <div style={styles.forecastContainer}>
         {props.forecastData.list.map(function (listItem) {
-          return <DayForecast key={listItem.dt} day={listItem} />
+          return <DayForecast key={listItem.dt} day={listItem} handleClick={props.handleClick.bind(null, listItem)}/>
         })}
       </div>
     </div>
@@ -34,13 +34,18 @@ function ForecastUI (props) {
 function Forecast (props) {
   return (props.isLoading === true)
       ? (<h1 style={styles.forecastHeader}> Loading </h1>)
-      : (<ForecastUI city={props.city} forecastData={props.forecastData} />)
+      : (<ForecastUI
+          city={props.city}
+          forecastData={props.forecastData}
+          handleClick={props.handleClick}
+        />)
 }
 
 Forecast.propTypes = {
   city: PropTypes.string.isRequired,
   forecastData: PropTypes.object.isRequired,
-  isLoading: PropTypes.bool.isRequired
+  isLoading: PropTypes.bool.isRequired,
+  handleClick: PropTypes.func.isRequired
 }
 
 module.exports = Forecast;

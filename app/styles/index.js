@@ -75,7 +75,8 @@ var styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    maxWidth: '60%'
+    maxWidth: '60%',
+    cursor: 'pointer'
   },
   weatherImg: {
     width: '100px'
