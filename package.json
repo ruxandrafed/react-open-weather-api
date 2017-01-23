@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ReactjsProgram/react-fundamentals-curriculum#readme",
   "dependencies": {
     "axios": "^0.15.3",
+    "dateformat": "^2.0.0",
     "dotenv-webpack": "^1.3.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
