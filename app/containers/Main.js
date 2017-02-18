@@ -1,10 +1,9 @@
-var React = require('react');
-var ReactRouter = require('react-router');
-var styles = require('../styles/index');
-var GetWeatherContainer = require('../containers/GetWeatherContainer');
+import React, { Component } from 'react';
+import styles from '../styles/index';
+import GetWeatherContainer from '../containers/GetWeatherContainer';
 
-var Main = React.createClass({
-  render: function () {
+class Main extends Component {
+  render () {
     return (
       <div style={styles.mainContainer}>
         <div style={styles.header}>
@@ -15,6 +14,6 @@ var Main = React.createClass({
       </div>
     )
   }
-})
+};
 
-module.exports = Main;
+export default Main;

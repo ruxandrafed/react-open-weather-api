@@ -1,4 +1,4 @@
-var styles = {
+const styles = {
   mainContainer: {
     width: '100%',
     height: '92%'
@@ -103,4 +103,4 @@ var styles = {
   }
 };
 
-module.exports = styles;
+export default styles;

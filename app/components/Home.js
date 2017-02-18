@@ -1,15 +1,12 @@
-var React = require('react');
-var styles = require('../styles/index');
-var GetWeatherContainer = require('../containers/GetWeatherContainer');
-var PropTypes = React.PropTypes;
+import React from 'react';
+import styles from '../styles/index';
+import GetWeatherContainer from '../containers/GetWeatherContainer';
 
-function Home() {
-  return (
-    <div style={styles.homeContainer}>
-      <h1 style={styles.homeHeader}>Enter a City and State</h1>
-      <GetWeatherContainer />
-    </div>
-  )
-}
+const Home = () => (
+  <div style={styles.homeContainer}>
+    <h1 style={styles.homeHeader}>Enter a City and State</h1>
+    <GetWeatherContainer />
+  </div>
+);
 
-module.exports = Home;
+export default Home;

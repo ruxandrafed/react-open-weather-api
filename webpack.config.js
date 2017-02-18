@@ -13,6 +13,7 @@ const Dotenv = new DotenvPlugin({
 
 module.exports = {
   entry: [
+    'babel-polyfill',
     './app/index.js'
   ],
   output: {

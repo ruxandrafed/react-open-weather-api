@@ -1,46 +1,35 @@
-var React = require('react');
-var styles = require('../styles/index');
-var PropTypes = React.PropTypes;
+import React, { PropTypes } from 'react';
+import styles from '../styles/index';
 
-function Button (props) {
-  return (
-    <button type='button'
-            style={styles.formButton}
-            className='btn btn-success'
-            onClick={props.onSubmitCity}>
-      {props.children}
-    </button>
-  )
-}
+const Button = (props) =>(
+  <button type='button'
+          style={styles.formButton}
+          className='btn btn-success'
+          onClick={props.onSubmitCity}>
+    {props.children}
+  </button>);
 
-function InputField (props) {
-  return (
-    <input
-      className='form-control'
-      onChange={props.onUpdateCity}
-      placeholder='St. George, Utah'
-      type='text'
-      value={props.city} />
-  )
-}
+const InputField = (props) =>(
+  <input className='form-control'
+         onChange={props.onUpdateCity}
+         placeholder='St. George, Utah'
+         type='text'
+         value={props.city}
+  />);
 
-function getFormStyle (direction) {
-  return direction === 'column' ? styles.homeForm: styles.headerForm;
-}
+const getFormStyle = (direction) => (direction === 'column') ? styles.homeForm: styles.headerForm;
 
-function GetWeather (props) {
-  return (
-    <div style={getFormStyle(props.direction)}>
-      <InputField
-        onUpdateCity={props.onUpdateCity}
-        city={props.city} />
-      <Button
-        onSubmitCity={props.onSubmitCity}>
-        Get Weather
-      </Button>
-    </div>
-  )
-}
+const GetWeather = (props) => (
+  <div style={getFormStyle(props.direction)}>
+    <InputField
+      onUpdateCity={props.onUpdateCity}
+      city={props.city} />
+    <Button
+      onSubmitCity={props.onSubmitCity}>
+      Get Weather
+    </Button>
+  </div>
+);
 
 GetWeather.propTypes = {
   direction: PropTypes.string,
@@ -49,4 +38,4 @@ GetWeather.propTypes = {
   city: PropTypes.string.isRequired
 };
 
-module.exports = GetWeather;
+export default GetWeather;
