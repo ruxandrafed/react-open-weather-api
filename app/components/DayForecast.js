@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { dayForecastContainer, weatherImg, dayForecastHeader} from '../styles/index';
+import styles from '../styles/index';
 import { getDateString } from '../utils/otherHelpers';
 
 const DayForecast = ({day, handleClick}) => {
@@ -7,9 +7,9 @@ const DayForecast = ({day, handleClick}) => {
   var icon = day.weather[0].icon;
   return (
     <div>
-      <div style={dayForecastContainer} onClick={handleClick}>
-        <img style={weatherImg} src={'http://openweathermap.org/img/w/' + icon + '.png'} alt='Weather' />
-        <h2 style={dayForecastHeader}>{date}</h2>
+      <div style={styles.dayForecastContainer} onClick={handleClick}>
+        <img style={styles.weatherImg} src={'http://openweathermap.org/img/w/' + icon + '.png'} alt='Weather' />
+        <h2 style={styles.dayForecastHeader}>{date}</h2>
       </div>
     </div>
   )
