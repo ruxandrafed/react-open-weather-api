@@ -3,13 +3,13 @@ import styles from '../styles/index';
 import DayForecast from './DayForecast';
 import { Link } from 'react-router';
 
-const ForecastUI = (props) => (
+const ForecastUI = ({city, forecastData, handleClick}) => (
   <div>
-    <h1 style={styles.forecastHeader}>{props.city}</h1>
+    <h1 style={styles.forecastHeader}>{city}</h1>
     <h2 style={styles.forecastSubheader}>Select a day</h2>
     <div style={styles.forecastContainer}>
-      {props.forecastData.list.map(function (listItem) {
-        return <DayForecast key={listItem.dt} id={listItem.dt} day={listItem} handleClick={props.handleClick.bind(null, listItem)}/>
+      {forecastData.list.map(function (listItem) {
+        return <DayForecast key={listItem.dt} id={listItem.dt} day={listItem} handleClick={handleClick.bind(null, listItem)}/>
       })}
     </div>
     <div style={styles.startOverBtnContainer}>
@@ -20,13 +20,13 @@ const ForecastUI = (props) => (
   </div>
 );
 
-const Forecast = (props) =>
-  (props.isLoading === true) ?
+const Forecast = ({isLoading, city, forecastData, handleClick}) =>
+  (isLoading === true) ?
     (<h1 style={styles.forecastHeader}> Loading </h1>) :
     (<ForecastUI
-        city={props.city}
-        forecastData={props.forecastData}
-        handleClick={props.handleClick}
+        city={city}
+        forecastData={forecastData}
+        handleClick={handleClick}
       />);
 
 Forecast.propTypes = {

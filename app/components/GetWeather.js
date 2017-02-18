@@ -1,31 +1,31 @@
 import React, { PropTypes } from 'react';
 import styles from '../styles/index';
 
-const Button = (props) =>(
+const Button = ({ onSubmitCity, children }) =>(
   <button type='button'
           style={styles.formButton}
           className='btn btn-success'
-          onClick={props.onSubmitCity}>
-    {props.children}
+          onClick={onSubmitCity}>
+    {children}
   </button>);
 
-const InputField = (props) =>(
+const InputField = ({ onUpdateCity, city }) =>(
   <input className='form-control'
-         onChange={props.onUpdateCity}
+         onChange={onUpdateCity}
          placeholder='St. George, Utah'
          type='text'
-         value={props.city}
+         value={city}
   />);
 
 const getFormStyle = (direction) => (direction === 'column') ? styles.homeForm: styles.headerForm;
 
-const GetWeather = (props) => (
-  <div style={getFormStyle(props.direction)}>
+const GetWeather = ({ direction, onUpdateCity, city, onSubmitCity}) => (
+  <div style={getFormStyle(direction)}>
     <InputField
-      onUpdateCity={props.onUpdateCity}
-      city={props.city} />
+      onUpdateCity={onUpdateCity}
+      city={city} />
     <Button
-      onSubmitCity={props.onSubmitCity}>
+      onSubmitCity={onSubmitCity}>
       Get Weather
     </Button>
   </div>
